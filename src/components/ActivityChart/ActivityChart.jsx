@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import Chart from 'chart.js/auto';
-import './ActivityChart.css';
+import React, { useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
+import "./ActivityChart.css";
 
 export default function ActivityChart() {
   const chartRef = useRef(null);
@@ -11,49 +11,53 @@ export default function ActivityChart() {
       chartInstance.current.destroy();
     }
 
-    const ctx = chartRef.current.getContext('2d');
+    const ctx = chartRef.current.getContext("2d");
 
     chartInstance.current = new Chart(ctx, {
-      type: 'bar',
+      type: "bar",
       data: {
         labels: Array.from({ length: 23 }, (_, i) => i + 5),
-        datasets: [{
-          label: 'Activity',
-          data: Array.from({ length: 23 }, () => Math.floor(Math.random() * 15000)),
-          backgroundColor: '#4a7dff',
-          borderRadius: 10,
-          barThickness: 20,
-        }]
+        datasets: [
+          {
+            label: "Activity",
+            data: Array.from({ length: 23 }, () =>
+              Math.floor(Math.random() * 15000)
+            ),
+            backgroundColor: "#4a7dff",
+            borderRadius: 10,
+            barThickness: 20,
+          },
+        ],
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
           legend: {
-            display: false
-          }
+            display: false,
+          },
         },
         scales: {
           y: {
             beginAtZero: true,
             grid: {
-              color: 'rgba(255, 255, 255, 0.1)',
+              color: "rgba(255, 255, 255, 0.1)",
             },
             ticks: {
-              color: '#8b949e',
-              callback: (value) => `${value / 1000}k`
-            }
+              color: "#8b949e",
+              callback: (value) => `${value / 1000}k`,
+            },
           },
           x: {
             grid: {
-              display: false
+              display: false,
             },
             ticks: {
-              color: '#8b949e'
-            }
-          }
-        }
-      }
+              color: "#8b949e",
+            },
+          },
+        },
+      },
     });
 
     return () => {
@@ -79,4 +83,3 @@ export default function ActivityChart() {
     </div>
   );
 }
-

@@ -2,6 +2,8 @@
   background: var(--surface);
   border-radius: 12px;
   padding: 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .chart-header {
@@ -27,5 +29,42 @@
 
 .chart-container {
   height: 300px;
+  position: relative;
 }
 
+.chart-container canvas {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .activity-chart {
+    padding: 1rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .chart-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .chart-select {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chart-container {
+    height: 200px;
+  }
+
+  .chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chart-select {
+    margin-top: 0.5rem;
+  }
+}
