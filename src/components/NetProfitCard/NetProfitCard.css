@@ -1,0 +1,53 @@
+.net-profit-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.net-profit-card:hover {
+  transform: translateY(-5px);
+}
+
+.net-profit-info h3 {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.net-profit-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.net-profit-change {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--success);
+  font-size: 0.875rem;
+}
+
+.net-profit-chart {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  align-self: flex-end;
+  margin-top: 1rem;
+
+}
+
+.net-profit-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
